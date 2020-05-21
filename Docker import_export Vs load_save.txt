@@ -1,0 +1,202 @@
+
+export Vs import
+
+load Vs save
+
+
+
+$ docker --help | grep -E "(export|import|load|save)"
+  export      Export a container's filesystem as a tar archive
+  import      Import the contents from a tarball to   create a filesystem image
+  load        Load an image from a tar archive or STDIN
+  save        Save one or more images to a tar archive
+
+
+	FROM busybox
+	CMD echo $((40 + 2))
+
+	$ docker build --tag busybox .
+	$ docker image ls
+	 
+	REPOSITORY            TAG                 IMAGE   ID          CREATED             SIZE
+	busybox               latest              5f3e5352a6e3        7 seconds ago       1.44MB
+
+	$ docker run busybox
+	42
+
+
+	$ docker save busybox > busybox.tar
+	$ docker stop $(docker ps -aq); docker rm $(docker ps -aq)
+	$ docker rmi < busybox image ID >
+	
+	$ docker import busybox.tar busybox_import
+	$ docker run busybox_import
+	docker: Error response from daemon: No command specified.
+
+------------------------------------------------------  Saving and Loading Images  ------------------------------------------------------
+
+	save and load work with Docker images. A Docker image is a kind of template, built from a Dockerfile, that specifies the layers required to build and run an app.
+	Our simple Dockerfile has two instructions corresponding to two layers. The first creates a layer from the busybox image (pulled from Docker Hub), which is an embedded Linux distro. The second is the command we want to run within that environment:
+	docker
+
+	FROM busybox
+	CMD echo $((40 + 2))
+
+		------------------------------------  Saving   ----------------------------------
+		
+			To share or back up our image, we use the docker save command. The documentation describes save as follows:
+			docker save – Save one or more images to a tar archive. Contains all parent layers, and all tags + versions.
+
+			Let’s save our image and inspect its contents (we could instead use docker inspect here, but it can be useful to know that our image just boils down to a list of files): 
+			
+			$ docker save busybox > busybox.tar
+			
+				$ mkdir busybox && tar -xf busybox.tar -C busybox
+				$ tree busybox
+				busybox
+				├──   41bfa732a8db4acc9d0ac180f869e1e253176b84748ba5a64732bd5b2ce8 # <- busybox layer
+				│   ├── VERSION
+				│   ├── json
+				│   └── layer.tar
+				├──   889226dbb27fd9ef2765ed48724bf22eb86b48bb984c2edbdb6f3e021e70.json # <- cmd layer
+				├── manifest.json
+				└── repositories
+			 
+				1 directory, 6 files
+				We can see our image has two layers, as expected. The BusyBox layer is more complicated, and as such, contains various files and folders, but our CMD layer is just a single JSON configuration file. Looking at this file, we see it has a Cmd entry, which is the same CMD we specified in our Dockerfile (just prefixed by Docker so that it runs correctly in the environment):
+				JSON
+				{
+				  ...
+				  "config": {
+				    ...
+				    "Cmd": ["/bin/sh", "-c", "echo $((40 +   2))"],
+				    ...
+				  },
+				  ...
+				}
+				Now that we understand what images are, have inspected their internals, and know how to save them, let’s move on to cover loading images into Docker.
+
+
+		------------------------------------  Loading   ----------------------------------
+		
+			To load an existing image, we use the load command. The documentation describes load as follows:
+			docker load – Load an image or repository from a tar archive. It restores both images and tags.
+
+			To test our saved image, let’s first remove our original busybox image from our local Docker registry: 
+			
+			$ docker image ls
+			REPOSITORY            TAG                 IMAGE   ID            CREATED             SIZE
+			busybox               latest              c93044af5b09        7 minutes ago       1.44MB
+			
+			$ docker image rm c93044af5b09 19485c79a9bb
+			...
+			
+			Then we’ll load our busybox image from the saved TAR file:
+			
+			$ docker load < busybox.tar
+			0d315111b484: Loading layer [==================================>]  1.437MB/1.437MB
+			Loaded image: busybox:latest
+			Checking our local images, we see that busybox is present. Note that the busybox image is not there, as it’s now contained within busybox: 
+			
+			$ docker image ls
+			REPOSITORY            TAG                 IMAGE   ID          CREATED             SIZE
+			busybox               latest              889226dbb27f        2 months   ago        1.44MB
+			Running the imported busybox image, we can see it works. Finally, a portable busyboxulator in only a couple hundred lines of Docker configuration 😅:
+			
+			$ docker run  -itd busybox
+			42
+			
+			
+------------------------------------------------------  Exporting Containers  ------------------------------------------------------
+
+	export works with Docker containers. If images are the template describing our app, containers are the resulting environment created from the template, or the place where our app actually runs. Containers run inside the Docker Engine, which abstracts away the host OS/infrastructure, allowing our apps to “run anywhere.”
+	Docker automatically creates a container for us when we run an image. If we check our list of containers, we should see busybox already listed there. As our app just starts, prints, and then exits, we need to pass the -all flag to also list stopped containers: 
+	
+	$ docker container ls --all    	or   	docker ps
+	CONTAINER ID          IMAGE               COMMAND                  CREATED
+	a8b14091b4e7          busybox                '/bin/sh -c echo $(…'    2 minutes ago
+
+		------------------------------------  Exporting   ----------------------------------
+		
+			To export a container, we use the docker export command. The documentation describes export as follows:
+			docker export – Export a container’s filesystem as a tar archive.
+
+			Let’s export our container and inspect its contents:
+			$ docker export a8b14091b4e7 > busybox-container.tar
+			
+				$ mkdir busybox-container && tar -xf busybox-container.tar -C busybox-container
+				$ tree -L 1 busybox-container
+				busybox-container
+				├── bin
+				├── dev
+				├── etc
+				├── home
+				├── proc
+				├── root
+				├── sys
+				├── tmp
+				├── usr
+				└── var
+				 
+				10 directories, 0 files
+				As we can see, this is just a regular old Linux file system — the BusyBox file system created when running our image, to be precise.
+				Why is this useful? Imagine our app is more complicated and takes a long time to build, or it generates a bunch of compute-intensive build artifacts. If we want to clone or move it, we could rebuild it from scratch from the original image, but it would be much faster to export a current snapshot of it, similar to how you might use a prebuilt binary as opposed to compiling one yourself.
+
+
+------------------------------------------------------  Importing Images  ------------------------------------------------------
+		
+	While save and load are easy to understand, both accepting and resulting in an image, the relationship between import and export is a little harder to grok.
+	There’s no way to “import a container” (which wouldn’t make sense, as it’s a running environment). As we saw above, export gives us a file system. import takes this file system and imports it as an image, which can run as-is or serve as a layer for other images.
+			
+		------------------------------------  Importing   ----------------------------------
+			To import an exported container as an image, we use the docker import command. The documentation describes import as follows:
+			docker import – Import the contents from a tarball to create a filesystem image.
+
+			Let’s import our container’s file system image and see what it can do: 
+			$ docker import busybox-container.tar busybox_container:latest
+			
+			$ docker image ls
+			REPOSITORY            TAG                 IMAGE   ID            CREATED                SIZE
+			busybox_container     latest                27ebbdf82bf8        About a   minute ago   1.44MB
+			busybox               latest                889226dbb27f        2 months   ago         1.44MB
+			
+			$ docker run -it busybox_container //bin//sh
+				/ # ls -lrt
+					total 36
+					drwxr-xr-x    2 root     root         12288 Dec 23 19:21 bin
+					drwxrwxrwt    2 root     root          4096 Dec 23 19:21 tmp
+					drwxr-xr-x    4 root     root          4096 Dec 23 19:21 var
+					drwxr-xr-x    3 root     root          4096 Dec 23 19:21 usr
+					drwxr-xr-x    2 nobody   nogroup       4096 Dec 23 19:21 home
+					drwxr-xr-x    1 root     root          4096 Feb  8 05:02 etc
+					dr-xr-xr-x   13 root     root             0 Feb  8 05:02 sys
+					dr-xr-xr-x  154 root     root             0 Feb  8 05:02 proc
+					drwxr-xr-x    5 root     root           360 Feb  8 05:02 dev
+					drwx------    1 root     root          4096 Feb  8 05:02 root
+			
+			As you can see, Docker happily runs our exported file system, which we can then attach to and explore.
+
+
+
+------------------------------------------------------  Conclusion  ------------------------------------------------------
+
+	To summarize what we’ve learned, we now know the following:
+	- save works with Docker images. It saves everything needed to build a container from scratch. Use this command if you want to share an image with others.
+	- load works with Docker images. Use this command if you want to run an image exported with save. Unlike pull, which requires connecting to a Docker registry, load can import from anywhere (e.g. a file system, URLs).
+	- export works with Docker containers, and it exports a snapshot of the container’s file system. Use this command if you want to share or back up the result of building an image.
+	- import works with the file system of an exported container, and it imports it as a Docker image. Use this command if you have an exported file system you want to explore or use as a layer for a new image.
+	  When I was new to Docker, this caused me some confusion. Had I RTFM’d a little more, digging into the subcommands, I might have noticed that export only applies to containers, while import, load, and save apply to images 🤦‍♂️:
+	  The result of all this learning is that PSPDFKit for Web is now available on both Docker Hub and npm, meaning first-class PDF support for your web apps is only a docker pull or npm install away 🎉. 
+  
+------------------------------------------------------  Tips & Tricks  ------------------------------------------------------
+
+$ docker container --help | grep -E "(export|import|load|save)"
+  export      Export a container\'s filesystem as a tar archive
+ 
+
+$ docker image --help | grep -E "(export|import|load|save)"
+  import      Import the contents from a tarball to   create a filesystem image
+  load        Load an image from a tar archive or STDIN
+  save        Save one or more images to a tar archive
+
+

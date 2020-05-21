@@ -1,0 +1,261 @@
+do we have the copy of presentation?
+Please, find the courseware here: https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+
+will there be a recording for this?
+Recording will not be shared afterwards.
+
+what was the aka fun-path...link ?
+https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+
+Any Voucher we get for exam after this course
+To get the exam voucher, you need to attend the sessions today and tomorrow.
+
+When will it start ?
+it has already started. Please refresh your browser.
+
+How much time do we have for the voucher until will expire?
+The voucher will be valid for 3 months.
+Is the voucher only good for AZ-900?
+Yes, the voucher is only for AZ-900.
+
+
+
+Should I be taking the exam with my business email account or personal? Is it changeable?
+Please, take the exam with your personal email.
+
+How many time can retake the exam?
+Up to 5 times within a year. The voucher is valid for your first time only.
+where the voucher will be sent?
+In your email address.
+Can you put some bullets about the differece between elasticity and scalability?
+scalability: ability to increase capacity, by scaling up (e.g. increase CPU, memory), or scaling out (e.g. add more virtual machines). You need to do this proactively and manually. Elasticity: automatic scalability, built-in in an environment.
+what is the duration of this training?
+4-hour long for each day
+Will the voucher be sent after the webinar ?
+Tomorrow, after the end of the second part.
+this presentation is very good , can we get it at the end of training?
+We cannot share the presentation. Please, find the courseware here: https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+will we get the session link for tomorrow session tomorrow?
+Yes, you will receive it tomorrow.
+can i take the exam with a diferent email that i receive the voucher?
+Yes, this is possible.
+can we get this slide
+We do not share the slides. Courseware: https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+I registered for this webinar using business email, but when I take the exam, will it allow me to use my personal email address?
+Yes, you will neeed to register for the exam from scratch anyways.
+What to study next after AZ-900 fundamentals?
+Take a look in the learning path: https://docs.microsoft.com/en-us/learn/azure/
+will we getting ppt shared in online session ?
+Not possible. Please, find the courseware here: https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+do we get ppt for this secession ?
+Courseware: https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/. The presentation is not shared.
+how can i make my attendance here?
+it is marked automatically by the system.
+Hi I still have not received the link for the tomorrow session . When will it be sent out ?
+This will be sent out by tomorrow.
+Will the voucher auto send to our registered email or we need to separately fill in forms?
+It will be automatically sent out to your email address.
+would you please summerize again the different between platform as a service and infrastructure as a service
+The differences lie on the components of the solution that is managed by you or by Microsoft. PaaS: You manage only application, data & access. The rest is managed by Microsoft. IaaS: You manage Data & Access, Application, Runtime, OS, VM. Microsoft manages only Compute, network and storage.
+Which is the best way to choose between IAAS, PAAS, SAAS?
+1. The level you need to have control over: in IaaS you can control the VM and the OS 2. Agility: PaaS and SaaS solutions will let you go live much faster. 3. Maintenance: In IaaS you need to maintain the VM, run updates etc.
+what are PASS,SASS,IASS BASIC example and services ?
+Examples: IaaS: Virtual Machine, PaaS: App Service SaaS: Office 365
+Can we get the voucher in our email address we registered for the webinar and yet use a personal email ID when using the voucher to give the exam?
+Yes, this is possible.
+Availability Zone is same as Data Center in a Region are they same?
+Each Availability Zone runs one or more datacenters that are indipendent from the datacenters in other availability zones (to help against datacenter outages if they might occur)
+for the exam i need to go to a test center or we can do this online from home?
+Can be done both ways.
+When do we get the second webinar link sent? I got the link sent 4 hour prior to the training
+Few hours before the start time.
+if you fail the fundamentals exam , would you be able to sit the exam again with another exam voucher? and could sit it anytime after or min of like a month? also , would MS notify our company?
+You can take the exam multiple times, if you fail once. The voucher to waive the cost will be valid for only one test. You can't run the next iteration immediately, but you don't have to wait a month... No, MS won't notify your company, if you fail the test.
+What happens if I don't pass the exam?
+You simply failed and have to re-test if you want to achieve the certification.
+Would you please make the clear about CAPEX V/s OPEX?
+CAPEX = capital expenditure - you will invest mony on the acquisition of "stuff". OPEX = Operational expenditure - you pay for the consumption/use and don't acquire assets.
+Is it a discount voucher of the full cost of the exam or is it completely free? and no retakes right?
+It is completely free.
+Any sample / practice questions to share?
+Not officially from Microsoft. You may want to take a look at other vendors, for example: https://www.measureup.com/
+Can I get a link to the leraning material he just mentioned?
+https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+How many modules will be presented today?
+2 modules
+If we chose an AZ over an AS, how can we get protection against data centers within a data center?
+There are no "datacenters in a datacenter". A datacenter is a logical construct made up of a bunch of hardware that shares a single entry on power, cooling and network. That is also contained physically. a second datacenter will be "physically" seperated instance with independant supply of power, cooling and network.
+can I take the exam online?
+Yes, more information here https://docs.microsoft.com/en-us/learn/certifications/exams/az-900
+Difference between Managed storage and Premium Storage in Azure?
+"Managed discs" don't require you to manage a storage account holding those disks. Premium (vs Standard) means that the disk is backed by SSDs instead of HDDs.
+How many regions and Availability Zones are there for Azure?
+This will be covered soon in module 2
+Could you explain the diference between avalability zone and set?
+All instances inside an Availability set run in the same datacenter, while instances in Avalability zones run in different datacenters...
+Can I proceed to the exam one more time for free or Is it only one try?
+One voucher waives the cost for one test / try.
+How many UD and FD within the set ?
+Up to 3 FD and 10 UD.
+Difference between availablity zone and sets ? still not clear on that part
+Availability zones will protect you against datacenter level failures because all instances inside one given availability set run in the same datacenter.
+If my vm's are deployed in a region, can I move them to a different region later on, for example when a new region comes up near to me
+You have the possibility to move resources. Please, take a look here: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-region
+Do you have Availability domains or any regions in Africa?
+Please, take a look in our regions: https://azure.microsoft.com/en-us/global-infrastructure/regions/
+Are my resources backed up to paired region when I deploy them ?
+Not automatically - you need to do that.
+do we get some practical session login for our hand-on learning?
+if you after the session review the online material for additional learning, there will be also hands on labs in a sandbox. Just go to https://aka.ms/azfunpath ...
+If my Organization located globally, then how to choose region ?
+It requires an internal analysis. You may select regions based on where your users are and establish replications of services in different regions.
+In the case of region pairs, is failover managed by Microsoft? Or as customers, we need to build in both regions and ensure failover?
+The second. We recommend that you configure business continuity disaster recovery (BCDR) across regional pairs to benefit from isolation and improve availability.
+How do we register for Exam?
+Go to https://aka.ms/learn and browse for certifications. Enter "AZ-900" in the search box and select the "AZ-900 : Microsoft Azure Fundamentals" entry. from there follow the path to register for the exam. Remember that you have to sign-in to that page with a personal Microsoft account and that you have to provide your official ID values for your personal information on the certification profile...
+Will it be emailed or provided at the end of tomorrow's course?
+should be mailed to the address you specified during registration after you attended all sessions.
+For the exam voucher, is there any registrations required?
+Yes, registering to this webinar and taking the sessions... ;)
+validity of voucher
+roughly three months after they are genereated. This is the time window to schedule the test and during scheduling use the voucher. The test itself then can be a bit in the "future"...
+zones and sets , what is the exact difference
+availability zones: separate cooling, networking, power and distance - different datacenters; availability sets: separate cooling, networking, power within one datacenter
+is the exam in vue persons?
+yes
+yes i will attend today and tomorrow session when will i get voucher tomorrow ?
+via mail after the webinar. Typically you should expect that it will take around two business days. Just in case - also check your junk mail folder...
+how can i catch up if I miss hour or two of a session?
+Walk through the course material online at your own pace after the webinar: https://aka.ms/azfunpath
+We have Azure based application running so sometimes we feel application/vm runs slow what will be cause is it network at our end has problems?
+You need to monitor your resources using Azure Monitor and make use of the Service Health to see if there is an Azure-general issue in your region. Both are built-in capabilities that you will find in Azure Portal.
+what is the link that was shared at the beginning which contains free courses and help on the subject?
+All different courses can be found on the Microsoft learning platform at docs.microsoft.com/learn
+tomorrow also same time or time will be different??
+same time - link will be send around six hours before the start...
+what was the practice exam link?
+There are no free available practice tests... The online course has knowledge check questions, but this is not a practice test.
+wat are passing marks for exams
+You need to collect 700 points out of 1000.
+Availability set can be created in only one particular region?
+yes. If you want to use multiple regions, you can do it without an AV set. All instances inside one AV set run in the same datacenter inside one region.
+what is the exam duration?
+One hour.
+Is that possible can we use on premises image for operating system?
+You can create and prepare it on-premises and then transfere it to Azure. But you have to follow the correct steps, so that the image will then run in Azure..
+what is community cloud ?
+Community cloud is cloud offered to government or particular organizations exclusively.
+which is the first Azure exam to be taken ?
+The fundamentasl is not related to any other - so there are no prerequisites..
+Elasticity: if i scaled up something today and after a week scaled back down to as it was before, how will you charge ?
+You will always be charged for what you use / what is "running"..
+what is temporary disk used for
+temporary data. Swap, Temp...
+As informed if both AZ and AS are free, why will someone go for AS ? they will simply choose AZ.
+Availability zones are not available in all regions yet.
+Any Labs in the AZ900 Exam?
+no, just questions...
+What permissions are needed to create a virtual machine?
+Contributor access at least for virtual machines as you have to create / write the VM object. This also means that you should not be restricted by policies from creating VMs.. Policies are covered later.
+Can i ask with the creation of a VM is it possible to create out of your Azure Active Directory?
+If have extended your on-premises environment (Active Directory) into Azure so that your VMs there can access it, yes, you can join them to your AD...
+is AZ 103 is there in future please reply
+I can't tell what Webinars are planned - but the AZ-103 / AZ-104 material should also be available on the learning platform.
+Could you explain again about UD and FD in Availability sets?
+Update Domain: logical group of hardware that undergo maintenance. This hardware is running under some short of software, such as HyperV. This software has to be patched from time to time, so that it can stay updated. Fault Domain: racks, logical group of hardware that share common power, cooling and networking. Single point of failure.
+How much will be the less if i use the voucher?
+Completely free.
+Why we use Resource Group first while creating anything in Azure Portal?
+Resources have to live in a Resource Group in general. This is why you have to always create one resource group first...
+Why is Datacenter the only version when creating a Windows VM in Azure?
+If you don't find the images you require in the Azure Marketplace, you can create your own. But you have to watch out for what is supported to run in Azure and what licensing allows you to do.
+In Azure IAAS - am I free to choose my installed OS, or are there restrictions (or presets) ?
+There is a long list of OS images from Linux and Windows. You can find them in Azure Marketplace, in the Azure Portal.
+Can I add antimalware to the existing VM?
+If you can install software - why not.. Windows comes with the built-in Windows Defender. If you add the extensions it will "just" enable to manage Defender from the "outside"...
+what is cost difference between availability zone and availability sets?
+Both come without any cost.
+I've already created a VM but didn't setup the availability set. If I wanted to have resiliency for this VM, do I need to recreate it and then set the availability set
+Yes, you have to delete the VM and re-create it inside an AV set. But you can retain the disk...
+How to decide scale sets ?
+VM Scale sets run all instances out of the same image. So you have to make sure that what is running in those instances supports "cloning"..
+Can you change the size without any downtime on a vm?
+Most times changing size require a reboot of the VM. So it will incur downtime for the reboot..
+Will AZ900 be replaced by a newer exam like AZ103 to be replaced soon as I was told.?
+AZ-900 and AZ-103/AZ-104 are totally different exams.. (Fundamentals vs Azure Administrator) AZ-104 is a so called "role based" training that maps to a job role you are on.
+If I have the VM's inside a resource gorup exported to a rack in a data centre, and then delete the resource group, is my VM preserved?
+If you delete your resource group, all resources within it are deleted.
+Is it important to create RG first while create anything?
+It is required to do so.
+Opensource Professionals Take their Customers to AWS.
+No need to do so. Azure runs open source stuff equally well and roughly 50% of what is run on Azure is Linux..
+After how long will Scaling in occur if the requirements of a scale up are not met?
+Automatic Scaling is based on rules that you specify. So, it will happen if the criteria is met.
+What is the benefit of specifying the same AS with in AZ? shouldn't it always be different to increase the availability
+You go with EITHER an availability set or with availability zones...
+A subscription can have multiple resources groups ?
+Each subscription has a limit of 980 resource groups.
+Can you define Bastian service please
+Bastion host is a security device sitting between the outside world and the VMs on your virtual network. So you don't expose a critical / sensitive interface of your VMs directly to the internet...
+what is different between windows AD and azure AD?
+Windows Server AD is an on-premises directory with on-premises protocols, like LDAP and Kerberos. Azure Active Directory is a cloud based directory supporting modern cloud protocols like https and OAuth.
+can you get to the console of the VM?
+Not the same way as on-premises... You don't have access to the host running the VM and therefore you have no access to those consoles. You only have what is provides by Azure.
+now i created resource group, and need to create vm when create vm i select resource group which i have created why he asking about region again while resource group reside on region?
+It is the region of a given resource. You can add resources of different regions in one resource group.
+what is a spot instance?
+Using Spot VMs allows you to take advantage of our unused capacity at a significant cost savings. At any point in time when Azure needs the capacity back, the Azure infrastructure will evict Spot VMs. Therefore, Spot VMs are great for workloads that can handle interruptions like batch processing jobs, dev/test environments, large compute workloads, and more.
+So Bastian can be considered something like firewall?
+In a simple way - yes. But it does more. You connect to it and have to authenticate to Azure to be able to do so. You talk to Bastion through HTTPS and the Bastion will then talk RDP/SSH to your VM on the private IP address. So you also don't need a public IP address.
+If I restart my VM, does it changes previously Assigned Public IP Address?
+Depends on your configuration. A dynamic assigned public IP address is released if you stop & deallocate the VM. If you configure it as a static IP address, it will stay the same.
+is the traffic between vnet is encrypted
+By default all data the we transmit over our backbone is encrypted when it leaves the server. So nobody can listen to the "private communication" that is happening on your VNet. Your servers can still communicate unencrypted and the published servcie could also, if you don't configure HTTPS etc.
+What is the difference b/w Container and AKS.
+With containers you have ACI (Azure Container Instances) for just running a few containers and AKS (Azure Kubernetes Service) if you require orchestration of many containers - if you wnat to put it in a simple way.
+Is there any charge for having static IP Address on Machines ?
+Yes - please review the pricing here: https://azure.microsoft.com/en-us/pricing/details/ip-addresses/
+Does LRS store 3 copies of data in the same physical location, i.e if that location burnt down, would your data be lost?
+In a simple way - yes. LRS is not distributed across different zones or regions. So, if a datacenter goes down, it will be unavailable. But it will be physically spread "locally", so will survive disk/server/rack outages etc.
+how do we monitor sas tokens and its usage ? can we control how people can really use if they have access ? and what level of controls we can have on them ?
+You specify what can be done and what time period. So you specify "how" and "when" it can be used..
+How is the delivery of the voucher controlled? Is the email of the person who attended the session recorded?
+It is sent to the mail you registered with..
+Azure SQL server is Paas or Saas?
+Azure SQL server is an IaaS offering. Azure SQL Database is a PaaS offering.
+what replication do you get when you use the default managed storage account for a VM
+Michael Korp Beantwortet um 10:21 AM Depends on what you select for the disk / storage account... By default creating a VM "suggests" a Premium SSD with LRS for disks and GRS for storage accounts.
+What storage would you use for backup?
+a Backup Vault.
+What options are there to connect on-prem AD to Azure AD?
+You connect them with Azure AD Connect that you have to install "locally".
+Could you define more on LRS and others, how does it stand out seperate
+Please, take a look at this documentation: https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+Is it recommended to use DNS and DHCP servers in Azure
+DHCP - YES!!! Never ever try to configure the OS inside a VM to use a static IP adress. Always leave it to DHCP. If you need a static IP adress, configure it static in the template/portal. DNS depends on your requirements... There are different options that are documented..
+Please repeat what`s bob files again
+Blob storage is massively scalable object storage for unstructured data. Here you can find more details: https://docs.microsoft.com/en-us/azure/storage/blobs/
+how we can mount storage and VM
+For a VM you attech a disk or use the OS SMD client to connect to Azure Files - that would be the simplest methods.
+can customer shift service form one cloud provider to others directly
+It is a migration, not a simple shift. But you can use AZure capabilities to migrate from other cloud providers the same way as from on-premises..
+How Devops is different from GITHUB services
+Azure DevOps is agile development software used to manage projects and software development. GitHub is version control software, which is used to keep old versions of code stored during software development to provide backups if new releases have issues.
+Where in Azure do I find information about which each resource is costing per month, per hour, per minute etc?
+https://azure.microsoft.com/en-us/pricing/
+What meant is companies dhcp server for getting the client IP addressm which has to be moved from on prem
+Don't understand the question... You create a virtual network in Azure and assigne it an address space. If you want to connect it to on-premises (Site-to-Site VPN, Express Route) you have to make sure, that the address space does not overlap. So, if you currently run some address space on-premm, you have to free it to use it in Azure.. On-Prem you run your DHCP servers, in Azure the plattform will provide that functionality..
+what is the difference between Azure powershell and Azure CLI?
+CLI is a bash like command line interface while Azure PowerShell is a PowerShell modulte that runs in PowerShell and provides Azure Management capabilities to your PowerShell environment, while Azure CLI does basically the same from your OS command shell.
+What is the difference between VMware and Azure?
+VMware is a virtualization platform, while Azure is a full cloud service provider with a lot more than just the base virtualization "stuff"..
+Do i have to know all new techologies for the exam..azure synapse, Azure arc, Azure edge ?
+Exams skills outline for your reference: https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUY
+Could we move VMs and PaaS services from one subscription to another? Could it be the entire resource group?
+Yes, most, but not all services can be moved. If you move something, deendant objects will also be moved..
+is Bash short for Bastion?
+No. Bastion is an Azure service while Bash is one possible command line environment on Linux.
+Can I have multiple users running a company's Azure?
+One company might have one or more subscriptions running services they need. One or more users might have "some" kind of access to one or more subscriptions...
+what is cloud shell?
+Cloud Shell is a command line interface providing a PowerShell OR Bash (switchable) command line interface inside the browser windows running the Azure portal (or your mobile device running the Azure Mobile App)
